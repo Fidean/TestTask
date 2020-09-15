@@ -18,11 +18,7 @@ class CheckViewModel : ViewModel() {
 
     val Answer = MutableLiveData<Boolean>()
 
-    init {
-        getPost()
-    }
-
-    private fun getPost() {
+    fun getAnswer() {
         Log.d("Network", "Start getPost")
         CoroutineScope(Dispatchers.IO).launch {
             var getCall = RetrofitNetwork.api.getCall(1)
