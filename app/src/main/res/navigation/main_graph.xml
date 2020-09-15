@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/check">
+
+    <fragment
+        android:id="@+id/check"
+        android:name="ru.fidean.testtask.Fragments.Check"
+        android:label="check_fragment"
+        tools:layout="@layout/check_fragment" >
+        <action
+            android:id="@+id/action_check_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_check_to_webFragment"
+            app:destination="@id/webFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="ru.fidean.testtask.Fragments.GameFragment"
+        android:label="game_fragment"
+        tools:layout="@layout/game_fragment" />
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="ru.fidean.testtask.Fragments.WebFragment"
+        android:label="web_fragment"
+        tools:layout="@layout/web_fragment" />
+</navigation>
