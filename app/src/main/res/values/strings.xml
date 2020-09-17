@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Test task</string>
     <string name="preference_file_key">Setting</string>
-    <string name="boolean_key">Boolean</string>
+    <string name="answer_key">Boolean</string>
     <string name="score">Score:</string>
     <string name="upName">Up click power</string>
     <string name="priceText">Price:</string>

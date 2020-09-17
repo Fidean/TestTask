@@ -1,23 +1,21 @@
 package ru.fidean.testtask.Fragments
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment.findNavController
-import ru.fidean.testtask.MainActivity
 import ru.fidean.testtask.R
 import ru.fidean.testtask.ViewModels.CheckViewModel
 
 class Check : Fragment() {
+
     fun navigate(thisIsWeb: Boolean) {
         if (thisIsWeb) {
-            Log.d("Answer", "Web Fragment")
             findNavController(this).navigate(CheckDirections.actionCheckToWebFragment())
         } else {
             findNavController(this).navigate(CheckDirections.actionCheckToGameFragment())
@@ -44,15 +42,14 @@ class Check : Fragment() {
             getString(R.string.preference_file_key),
             Context.MODE_PRIVATE
         )
-        if (pref.contains(getString(R.string.boolean_key))) {
-            navigate(pref.getBoolean(getString(R.string.boolean_key), false))
+        if (pref.contains(getString(R.string.answer_key))) {
+            navigate(pref.getBoolean(getString(R.string.answer_key), false))
         } else {
             viewModel.getAnswer()
         }
         viewModel.Answer.observe(viewLifecycleOwner, Observer {
-            Log.d("Answer", "Get $it")
             val editor = pref.edit()
-            editor.putBoolean(getString(R.string.boolean_key), it).apply()
+            editor.putBoolean(getString(R.string.answer_key), it).apply()
             navigate(it)
         })
 

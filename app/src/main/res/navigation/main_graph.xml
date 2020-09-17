@@ -9,7 +9,7 @@
         android:id="@+id/check"
         android:name="ru.fidean.testtask.Fragments.Check"
         android:label="check_fragment"
-        tools:layout="@layout/check_fragment" >
+        tools:layout="@layout/check_fragment">
         <action
             android:id="@+id/action_check_to_gameFragment"
             app:destination="@id/gameFragment" />
